@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Shell Hint</string>
+    <string name="img_desc_logo">Offensive Security Logo</string>
+    <string-array name="main_options">
+        <item>NETWORK SCAN</item>
+        <item>SHELL COMMANDS</item>
+        <item>FORENSIC TOOLS</item>
+    </string-array>
+    <string name="plus_activity_logo">Change Theme</string>
+    <string name="menu_action_send">Send</string>
+    <string name="apply_button">Apply</string>
+    <string name="theme_switch">Color Theme</string>
+</resources>
