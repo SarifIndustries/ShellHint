@@ -38,4 +38,7 @@
     <string name="swipe_tab_Utilities">Utilities</string>
     <string name="swipe_tab_Network">Network</string>
 
+    <string name="create_command_hint">Enter new command</string>
+    <string name="create_description_hint">Enter description</string>
+
 </resources>
