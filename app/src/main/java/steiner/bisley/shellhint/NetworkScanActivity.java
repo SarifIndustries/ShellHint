@@ -10,8 +10,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import java.util.List;
-
 public class NetworkScanActivity extends AppCompatActivity {
 
     @Override

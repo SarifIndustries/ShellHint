@@ -10,4 +10,30 @@
     <string name="menu_action_send">Send</string>
     <string name="apply_button">Apply</string>
     <string name="theme_switch">Color Theme</string>
+
+    <string name="NavigationFragment">Navigation</string>
+
+    <string-array name="UtList">
+        <item>vim</item>
+        <item>gcc</item>
+        <item>git</item>
+        <item>gdb</item>
+    </string-array>
+
+    <string-array name="SysList">
+        <item>ps</item>
+        <item>htop</item>
+    </string-array>
+
+    <string-array name="NetList">
+        <item>netstat</item>
+        <item>nmcli</item>
+        <item>ip link</item>
+    </string-array>
+
+    <string name="swipe_tab_Navigation">Navigation</string>
+    <string name="swipe_tab_System">System</string>
+    <string name="swipe_tab_Utilities">Utilities</string>
+    <string name="swipe_tab_Network">Network</string>
+
 </resources>

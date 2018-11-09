@@ -16,13 +16,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".NetworkScanActivity" android:parentActivityName=".MainActivity" />
-        <activity android:name=".NSDetailsActivity" android:parentActivityName=".NetworkScanActivity" />
+        <activity
+            android:name=".NetworkScanActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".ShellCommandsActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".NSDetailsActivity"
+            android:parentActivityName=".NetworkScanActivity" />
         <activity
             android:name=".PlusActivity"
             android:label="@string/plus_activity_logo"
-            android:parentActivityName=".MainActivity">
-        </activity>
+            android:parentActivityName=".MainActivity"></activity>
+
     </application>
 
 </manifest>

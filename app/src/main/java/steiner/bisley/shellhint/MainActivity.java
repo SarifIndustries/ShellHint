@@ -35,13 +35,10 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(int1);
                 }
                 if(position == 1) {
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            Toast.makeText(MainActivity.this , "SHELL COMMANDS coming soon...", Toast.LENGTH_SHORT).show();
-                        }
-                    });
-                }if(position == 2) {
+                    Intent int2 = new Intent(MainActivity.this, ShellCommandsActivity.class);
+                    startActivity(int2);
+                }
+                if(position == 2) {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
