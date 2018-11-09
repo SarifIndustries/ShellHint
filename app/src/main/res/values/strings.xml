@@ -13,6 +13,8 @@
 
     <string name="NavigationFragment">Navigation</string>
 
+    <string name="Navigation_Hints">Welcome to shell navigation hints.</string>
+
     <string-array name="UtList">
         <item>vim</item>
         <item>gcc</item>
