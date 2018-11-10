@@ -2,13 +2,14 @@ package steiner.bisley.shellhint;
 
 
 import android.os.Bundle;
-import android.support.v4.app.ListFragment;
+import android.support.v4.app.Fragment;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 
-public class UtilsFragment extends ListFragment {
+public class UtilsFragment extends Fragment {
 
     public UtilsFragment() {
         // Required empty public constructor
@@ -17,16 +18,23 @@ public class UtilsFragment extends ListFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        ArrayAdapter<String> adap1 = new ArrayAdapter<String>(inflater.getContext(),
-                android.R.layout.simple_list_item_1,
-                getResources().getStringArray(R.array.UtList));
-        setListAdapter(adap1);
-        View view = super.onCreateView(inflater, container, savedInstanceState);
-        int paddingDp = 26;
-        float density = inflater.getContext().getResources().getDisplayMetrics().density;
-        int paddingPixel = (int)(paddingDp * density);
-        view.setPadding(paddingPixel, 0, paddingPixel, 0);
-        return view;
+        RecyclerView platformRecycler = (RecyclerView) inflater.inflate(R.layout.fragment_platforms, container, false);
+
+        String[] platformNames = new String[PlatformData.platformArray.length];
+        for(int i = 0; i < platformNames.length; i++) {
+            platformNames[i] = PlatformData.platformArray[i].getName();
+        }
+
+        int[] platformIDs = new int[PlatformData.platformArray.length];
+        for(int i = 0; i < platformIDs.length; i++) {
+            platformIDs[i] = PlatformData.platformArray[i].getImageID();
+        }
+
+        CardAdapter adap1 = new CardAdapter(platformNames, platformIDs);
+        platformRecycler.setAdapter(adap1);
+        GridLayoutManager layoutManager = new GridLayoutManager(getActivity(), 2);
+        platformRecycler.setLayoutManager(layoutManager);
+        return platformRecycler;
     }
 
 }

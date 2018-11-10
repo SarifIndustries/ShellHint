@@ -33,9 +33,9 @@
         <item>ip link</item>
     </string-array>
 
-    <string name="swipe_tab_Navigation">Navigation</string>
+    <string name="swipe_tab_Navigation">Nav</string>
     <string name="swipe_tab_System">System</string>
-    <string name="swipe_tab_Utilities">Utilities</string>
+    <string name="swipe_tab_Utilities">Platform</string>
     <string name="swipe_tab_Network">Network</string>
 
     <string name="create_command_hint">Enter new command</string>
