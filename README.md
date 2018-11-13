@@ -4,5 +4,5 @@
 Note:
 This app is for **Professionals** only.  
 
-~~To test app - use **[apk file](test/ShellHint.apk)**~~  `temporarily disabled`  
+To test app - use **[apk file](https://github.com/SarifIndustries/ShellHint/releases/download/0.1/shellhint01.apk)**
 `Hint : Download it on your Android device and launch.`  
