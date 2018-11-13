@@ -1,6 +1,7 @@
 package steiner.bisley.shellhint;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
@@ -34,6 +35,18 @@ public class UtilsFragment extends Fragment {
         platformRecycler.setAdapter(adap1);
         GridLayoutManager layoutManager = new GridLayoutManager(getActivity(), 2);
         platformRecycler.setLayoutManager(layoutManager);
+
+        // Listener onclick interface from adapter
+        adap1.setListonier(new CardAdapter.Listonier() {
+            @Override
+            public void onClick(int position) {
+                Intent int1 = new Intent(getActivity(), PlatformDetailsActivity.class);
+                int1.putExtra(PlatformDetailsActivity.EXTRA_PLATFORM_ID, position);
+                getActivity().startActivity(int1);
+            }
+        });
+
+
         return platformRecycler;
     }
 

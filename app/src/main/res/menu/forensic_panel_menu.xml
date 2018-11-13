@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:checkableBehavior="single">
+
+        <item
+            android:checked="true"
+            android:icon="@android:drawable/sym_action_email"
+            android:title="@string/forensic_panel_menu_inbox"
+            android:id="@+id/forensic_panel_inbox"/>
+        <item
+            android:icon="@android:drawable/ic_menu_edit"
+            android:title="@string/forensic_panel_menu_drafts"
+            android:id="@+id/forensic_panel_drafts"/>
+        <item
+            android:icon="@android:drawable/ic_menu_send"
+            android:title="@string/forensic_panel_menu_sent_cases"
+            android:id="@+id/forensic_panel_sent_cases"/>
+        <item
+            android:icon="@android:drawable/ic_menu_delete"
+            android:title="@string/forensic_panel_menu_closed_cases"
+            android:id="@+id/forensic_panel_closed_cases"/>
+
+    </group>
+
+
+    <item
+        android:title="@string/forensic_panel_menu_support">
+
+        <menu>
+
+            <item
+                android:icon="@android:drawable/ic_menu_help"
+                android:title="@string/forensic_panel_menu_help"
+                android:id="@+id/forensic_panel_help"/>
+
+            <item
+                android:icon="@android:drawable/sym_action_email"
+                android:title="@string/forensic_panel_menu_feedback"
+                android:id="@+id/forensic_panel_feedback"/>
+
+        </menu>
+
+
+    </item>
+
+</menu>

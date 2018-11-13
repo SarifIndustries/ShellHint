@@ -5,14 +5,25 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 
 public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
 
     private String[] names;
     private int[] imageIDs;
+    private Listonier listonieros1;
+
+    interface Listonier {
+        void onClick(int position);
+    }
+
+    public void setListonier(Listonier l1) {
+        listonieros1 = l1;
+    }
 
     public CardAdapter(String[] ns, int[] ids) {
         names = ns;
@@ -41,7 +52,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position) {
 
         CardView cv = holder.cardView;
 
@@ -52,6 +63,16 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
 
         TextView text1 = cv.findViewById(R.id.card_text);
         text1.setText(names[position]);
+
+        // Bind Listener
+        cv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(listonieros1 != null) {
+                    listonieros1.onClick(position);
+                }
+            }
+        });
 
     }
 }

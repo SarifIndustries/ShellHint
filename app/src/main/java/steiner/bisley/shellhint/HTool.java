@@ -1,5 +1,7 @@
 package steiner.bisley.shellhint;
 
+import android.content.Intent;
+
 public class HTool {
     private String name;
     private String description;

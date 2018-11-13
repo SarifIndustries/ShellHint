@@ -4,5 +4,5 @@
 Note:
 This app is for **Professionals** only.  
 
-To test app - use **[apk file](test/ShellHint.apk)**  
+~~To test app - use **[apk file](test/ShellHint.apk)**~~  `temporarily disabled`  
 `Hint : Download it on your Android device and launch.`  

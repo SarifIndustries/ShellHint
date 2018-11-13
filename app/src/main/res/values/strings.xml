@@ -41,4 +41,19 @@
     <string name="create_command_hint">Enter new command</string>
     <string name="create_description_hint">Enter description</string>
 
+
+    <!-- Forensic section -->
+    <string name="forensic_panel_txt1">Computer Forensics</string>
+    <string name="forensic_panel_txt2">Digital investigation and analysis</string>
+    <string name="forensic_panel_menu_inbox">Cases</string>
+    <string name="forensic_panel_menu_drafts">Drafts</string>
+    <string name="forensic_panel_menu_sent_cases">Reported Cases</string>
+    <string name="forensic_panel_menu_closed_cases">Closed Cases</string>
+    <string name="forensic_panel_menu_support">Support</string>
+    <string name="forensic_panel_menu_help">Request Help</string>
+    <string name="forensic_panel_menu_feedback">Feedback</string>
+
+    <string name="forensic_open_panel">Open navigation drawer</string>
+    <string name="forensic_close_panel">Close navigation drawer</string>
+
 </resources>

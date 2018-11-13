@@ -39,12 +39,15 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(int2);
                 }
                 if(position == 2) {
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            Toast.makeText(MainActivity.this , "FORENSIC TOOLS coming soon...", Toast.LENGTH_SHORT).show();
-                        }
-                    });
+                    Intent int3 = new Intent(MainActivity.this, ForensicActivity.class);
+                    startActivity(int3);
+
+//                    runOnUiThread(new Runnable() {
+//                        @Override
+//                        public void run() {
+//                            Toast.makeText(MainActivity.this , "FORENSIC TOOLS coming soon...", Toast.LENGTH_SHORT).show();
+//                        }
+//                    });
                 }
             }
         };

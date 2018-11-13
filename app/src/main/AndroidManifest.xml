@@ -28,8 +28,15 @@
         <activity
             android:name=".PlusActivity"
             android:label="@string/plus_activity_logo"
-            android:parentActivityName=".MainActivity"></activity>
-
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".PlatformDetailsActivity"
+            android:parentActivityName=".ShellCommandsActivity" />
+        <activity
+            android:name=".ForensicActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".ForensicHelpActivity" />
+        <activity android:name=".ForensicFeedbackActivity" />
     </application>
 
 </manifest>
