@@ -1,6 +1,10 @@
 package steiner.bisley.shellhint;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -9,8 +13,13 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.SimpleCursorAdapter;
+import android.widget.Toast;
 
 public class NetworkScanActivity extends AppCompatActivity {
+
+    private Cursor cursor;
+    private SQLiteDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,14 +34,38 @@ public class NetworkScanActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        ListView listTools = (ListView) findViewById(R.id.netscanList);
+        ListView listTools = findViewById(R.id.netscanList);
 
-        ArrayAdapter<HTool> listAdapter = new ArrayAdapter<>(
-                this,
-                android.R.layout.simple_list_item_1,
-                HTool.htools);
+        // Database open
+        SQLiteOpenHelper dbHelper = new HToolDatabaseHelper(this);
+        try {
+            SQLiteDatabase db = dbHelper.getReadableDatabase();
+            Cursor cursor = db.query("TOOLTABLE",
+                    new String[]{"_id", "NAME"},
+                    null, null, null, null, null);
 
-        listTools.setAdapter(listAdapter);
+            // Cursor Adapter
+            SimpleCursorAdapter listAdapter = new SimpleCursorAdapter(this,
+                    android.R.layout.simple_list_item_1,
+                    cursor,
+                    new String[] {"NAME"},
+                    new int[] {android.R.id.text1},
+                    0);
+
+            listTools.setAdapter(listAdapter);
+
+        } catch(SQLiteException e) {
+            Toast tos = Toast.makeText(this, "Database situation.", Toast.LENGTH_LONG);
+            tos.show();
+        }
+
+
+//        ArrayAdapter<HTool> listAdapter = new ArrayAdapter<>(
+//                this,
+//                android.R.layout.simple_list_item_1,
+//                HTool.htools);
+
+        // listTools.setAdapter(listAdapter);
 
         AdapterView.OnItemClickListener listener = new AdapterView.OnItemClickListener() {
             @Override
@@ -47,5 +80,17 @@ public class NetworkScanActivity extends AppCompatActivity {
         };
 
         listTools.setOnItemClickListener(listener);
+    }
+
+
+    @Override
+    public void onDestroy() {
+        if(cursor != null) {
+            cursor.close();
+        }
+        if(db != null) {
+            db.close();
+        }
+        super.onDestroy();
     }
 }
