@@ -56,4 +56,7 @@
     <string name="forensic_open_panel">Open navigation drawer</string>
     <string name="forensic_close_panel">Close navigation drawer</string>
 
+    <string name="favorite">Favorite</string>
+    <string name="favorite_main_menu">Important Commands (favorites) :            </string>
+
 </resources>

@@ -85,12 +85,15 @@ public class NetworkScanActivity extends AppCompatActivity {
 
     @Override
     public void onDestroy() {
+
+        super.onDestroy();
+
         if(cursor != null) {
             cursor.close();
         }
         if(db != null) {
             db.close();
         }
-        super.onDestroy();
+
     }
 }
